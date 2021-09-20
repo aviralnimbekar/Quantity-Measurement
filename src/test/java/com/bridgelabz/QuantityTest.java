@@ -64,9 +64,9 @@ public class QuantityTest {
     }
 
     @Test
-    void givenFeetAndInchFromDiffType_ShouldReturnNotEqual() {
-        Feet feet = new Feet(0.0);
-        Inch inch = new Inch(0.0);
+    void given1FeetAnd12InchFromDiffType_ShouldReturnNotEqual() {
+        Feet feet = new Feet(1.0);
+        Inch inch = new Inch(12.0);
         Assertions.assertNotEquals(feet, inch);
     }
 
@@ -82,5 +82,33 @@ public class QuantityTest {
         Inch inch1 = new Inch(0.0);
         Inch inch2 = new Inch(1.0);
         Assertions.assertNotEquals(inch1, inch2);
+    }
+
+    @Test
+    void givenFeetAndInch_WhenEqual_ShouldReturnTrue() {
+        Feet feetToInch = new Feet();
+        boolean result = feetToInch.lengthComparison(1.0, 12.0);
+        Assertions.assertTrue(result);
+    }
+
+    @Test
+    void givenFeetAndInch_WhenNotEqual_ShouldReturnFalse() {
+        Feet feetToInch = new Feet();
+        boolean result = feetToInch.lengthComparison(3.0, 10.0);
+        Assertions.assertFalse(result);
+    }
+
+    @Test
+    void givenInchAndFeet_WhenEqual_ShouldReturnTrue() {
+        Inch InchToFeet = new Inch();
+        boolean result = InchToFeet.lengthComparison(12.0, 1);
+        Assertions.assertTrue(result);
+    }
+
+    @Test
+    void givenInchAndFeet_WhenNotEqual_ShouldReturnFalse() {
+        Inch InchToFeet = new Inch();
+        boolean result = InchToFeet.lengthComparison(22.0, 3);
+        Assertions.assertFalse(result);
     }
 }
