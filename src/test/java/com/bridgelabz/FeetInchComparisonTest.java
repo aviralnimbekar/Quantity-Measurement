@@ -3,7 +3,7 @@ package com.bridgelabz;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class QuantityTest {
+public class FeetInchComparisonTest {
 
     @Test
     void given0FeetAnd0Feet_ShouldReturnEqual() {
