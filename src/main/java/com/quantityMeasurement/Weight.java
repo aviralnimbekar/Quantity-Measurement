@@ -21,6 +21,13 @@ public class Weight {
         return false;
     }
 
+    public Weight sumOfWeight(Weight that) {
+        double sumOfWeight = 0.0;
+        if (this.unit.equals(Unit.TONNE) && that.unit.equals(Unit.GRAM))
+            sumOfWeight = this.value * TONNE_TO_KILO_GRAM + that.value / KILO_GRAM_TO_GRAM;
+        return new Weight(Unit.KILOGRAM, sumOfWeight);
+    }
+
     @Override
     public boolean equals(Object that) {
         if (this == that) return true;
