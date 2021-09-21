@@ -87,10 +87,18 @@ public class VolumeMeasurementTest {
     }
 
     @Test
-    void given1LiterAnd0MilliLiter_WhenCompared_ShouldReturnEqualVolume() {
+    void given1LiterAnd1000MilliLiter_WhenCompared_ShouldReturnEqualVolume() {
         Volume liter = new Volume(Volume.Unit.LITER, 1.0);
         Volume ml = new Volume(Volume.Unit.MILLI_LITER, 1000.0);
         boolean compareCheck = liter.compare(ml);
+        Assertions.assertTrue(compareCheck);
+    }
+
+    @Test
+    void given1000MilliLiterAnd1Liter_WhenCompared_ShouldReturnEqualVolume() {
+        Volume ml = new Volume(Volume.Unit.MILLI_LITER, 1000.0);
+        Volume liter = new Volume(Volume.Unit.LITER, 1.0);
+        boolean compareCheck = ml.compare(liter);
         Assertions.assertTrue(compareCheck);
     }
 }
