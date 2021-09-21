@@ -39,4 +39,20 @@ public class WeightMeasurementTest {
         Volume volume = new Volume(Volume.Unit.GALLON, 0.0);
         Assertions.assertNotEquals(weight, volume);
     }
+
+    @Test
+    void given1KGAnd1000Gram_WhenCompared_ShouldReturnEqualWeight() {
+        Weight kg = new Weight(Weight.Unit.KILOGRAM, 1.0);
+        Weight gram = new Weight(Weight.Unit.GRAM, 1000.0);
+        boolean compareCheck = kg.compare(gram);
+        Assertions.assertTrue(compareCheck);
+    }
+
+    @Test
+    void given1TonneAnd1000KG_WhenCompared_ShouldReturnEqualWeight() {
+        Weight tonne = new Weight(Weight.Unit.TONNE, 1.0);
+        Weight kg = new Weight(Weight.Unit.KILOGRAM, 1000.0);
+        boolean compareCheck = tonne.compare(kg);
+        Assertions.assertTrue(compareCheck);
+    }
 }
