@@ -53,4 +53,44 @@ public class VolumeMeasurementTest {
         Volume liter2 = new Volume(Volume.Unit.LITER, 2.0);
         Assertions.assertNotEquals(liter1, liter2);
     }
+
+    @Test
+    void given0GallonAnd0Liter_WhenCompared_ShouldReturnEqualVolume() {
+        Volume gallon = new Volume(Volume.Unit.GALLON, 0.0);
+        Volume liter = new Volume(Volume.Unit.LITER, 0.0);
+        boolean compareCheck = gallon.compare(liter);
+        Assertions.assertTrue(compareCheck);
+    }
+
+    @Test
+    void given1GallonAnd1Liter_WhenCompared_ShouldReturnNotEqualVolume() {
+        Volume gallon = new Volume(Volume.Unit.GALLON, 1.0);
+        Volume liter = new Volume(Volume.Unit.LITER, 1.0);
+        boolean compareCheck = gallon.compare(liter);
+        Assertions.assertFalse(compareCheck);
+    }
+
+    @Test
+    void given1GallonAnd3$78Liter_WhenCompared_ShouldReturnEqualVolume() {
+        Volume gallon = new Volume(Volume.Unit.GALLON, 1.0);
+        Volume liter = new Volume(Volume.Unit.LITER, 3.78);
+        boolean compareCheck = gallon.compare(liter);
+        Assertions.assertTrue(compareCheck);
+    }
+
+    @Test
+    void given3$78LiterAnd1Gallon_WhenCompared_ShouldReturnEqualVolume() {
+        Volume liter = new Volume(Volume.Unit.LITER, 3.78);
+        Volume gallon = new Volume(Volume.Unit.GALLON, 1.0);
+        boolean compareCheck = liter.compare(gallon);
+        Assertions.assertTrue(compareCheck);
+    }
+
+    @Test
+    void given1LiterAnd0MilliLiter_WhenCompared_ShouldReturnEqualVolume() {
+        Volume liter = new Volume(Volume.Unit.LITER, 1.0);
+        Volume ml = new Volume(Volume.Unit.MILLI_LITER, 1000.0);
+        boolean compareCheck = liter.compare(ml);
+        Assertions.assertTrue(compareCheck);
+    }
 }
