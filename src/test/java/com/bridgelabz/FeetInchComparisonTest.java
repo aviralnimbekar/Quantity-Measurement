@@ -83,32 +83,4 @@ public class FeetInchComparisonTest {
         Inch inch2 = new Inch(1.0);
         Assertions.assertNotEquals(inch1, inch2);
     }
-
-    @Test
-    void givenFeetAndInch_WhenEqual_ShouldReturnTrue() {
-        Feet feetToInch = new Feet();
-        boolean result = feetToInch.lengthComparison(1.0, 12.0);
-        Assertions.assertTrue(result);
-    }
-
-    @Test
-    void givenFeetAndInch_WhenNotEqual_ShouldReturnFalse() {
-        Feet feetToInch = new Feet();
-        boolean result = feetToInch.lengthComparison(3.0, 10.0);
-        Assertions.assertFalse(result);
-    }
-
-    @Test
-    void givenInchAndFeet_WhenEqual_ShouldReturnTrue() {
-        Inch InchToFeet = new Inch();
-        boolean result = InchToFeet.lengthComparison(12.0, 1);
-        Assertions.assertTrue(result);
-    }
-
-    @Test
-    void givenInchAndFeet_WhenNotEqual_ShouldReturnFalse() {
-        Inch InchToFeet = new Inch();
-        boolean result = InchToFeet.lengthComparison(22.0, 3);
-        Assertions.assertFalse(result);
-    }
 }

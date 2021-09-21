@@ -13,7 +13,7 @@ public class YardFeetComparisonTest {
     }
 
     @Test
-    void givenYardAndYardFromSameRef_WhenEqual_ShouldReturnTure() {
+    void givenYardAndYardFromSameRef_WhenEqual_ShouldReturnTrue() {
         Yard yard1 = new Yard(0);
         boolean result = yard1 == yard1;
         Assertions.assertTrue(result);

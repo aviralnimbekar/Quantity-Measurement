@@ -1,18 +1,13 @@
 package com.bridgelabz;
 
 public class Feet {
-    private Double value;
+    Double value;
 
     public Feet(Double value) {
         this.value = value;
     }
 
     public Feet() {
-    }
-
-    boolean lengthComparison(double ft, double in) {
-        ft = 12 * ft;
-        return ft == in;
     }
 
     @Override
