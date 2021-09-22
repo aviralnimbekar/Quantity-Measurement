@@ -36,7 +36,7 @@ public class TemperatureMeasurementTest {
     @Test
     void given0FahrenheitAnd0FahrenheitFromDiffType_ShouldReturnNotEqualTemperature() {
         Temperature temp = new Temperature(Temperature.Unit.FAHRENHEIT, 0.0);
-        Weight weight = new Weight(Weight.Unit.GRAM, 0.0);
+        QuantityMeasurementSystem weight = new QuantityMeasurementSystem(Weight.GRAM, 0.0);
         Assertions.assertNotEquals(temp, weight);
     }
 
