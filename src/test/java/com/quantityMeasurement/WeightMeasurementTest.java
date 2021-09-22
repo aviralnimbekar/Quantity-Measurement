@@ -36,7 +36,7 @@ public class WeightMeasurementTest {
     @Test
     void given0GramAnd0GramFromDiffType_ShouldReturnNotEqualWeight() {
         Weight weight = new Weight(Weight.Unit.GRAM, 0.0);
-        Volume volume = new Volume(Volume.Unit.GALLON, 0.0);
+        QuantityMeasurementSystem volume = new QuantityMeasurementSystem(Volume.GALLON, 0.0);
         Assertions.assertNotEquals(weight, volume);
     }
 
