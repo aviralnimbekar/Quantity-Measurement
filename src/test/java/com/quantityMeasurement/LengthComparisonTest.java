@@ -27,16 +27,17 @@ public class LengthComparisonTest {
     }
 
     @Test
-    void given0FeetAnd0FeetFromSameRef_ShouldReturnSameRef() {
-        Length feet1 = new Length(Unit.FEET, 0.0);
-        Assertions.assertSame(feet1, feet1);
-    }
-
-    @Test
     void given0FeetAnd0FeetFromDiffRef_ShouldReturnNotSameRef() {
         Length feet1 = new Length(Unit.FEET, 0.0);
         Length feet2 = new Length(Unit.FEET, 0.0);
         Assertions.assertNotSame(feet1, feet2);
+    }
+
+    @Test
+    void given0FeetAnd1LiterFromDiffType_WhenComparedShouldReturnNotSame() {
+        Length length = new Length(Unit.FEET, 0.0);
+        Volume volume = new Volume(Volume.Unit.LITER, 0);
+        Assertions.assertNotEquals(length, volume);
     }
 
     @Test
@@ -58,12 +59,6 @@ public class LengthComparisonTest {
         Length inch1 = new Length(Unit.INCH, 0.0);
         Length inch2 = null;
         Assertions.assertNotEquals(inch1, inch2);
-    }
-
-    @Test
-    void given0InchAnd0InchFromSameRef_ShouldReturnSame() {
-        Length inch1 = new Length(Unit.INCH, 0.0);
-        Assertions.assertSame(inch1, inch1);
     }
 
     @Test
@@ -142,12 +137,6 @@ public class LengthComparisonTest {
         Length yard1 = new Length(Unit.YARD, 0.0);
         Length yard2 = null;
         Assertions.assertNotEquals(yard1, yard2);
-    }
-
-    @Test
-    void given0YardAnd0YardFromSameRef_ShouldReturnSameRef() {
-        Length Yard1 = new Length(Unit.YARD, 0.0);
-        Assertions.assertSame(Yard1, Yard1);
     }
 
     @Test
