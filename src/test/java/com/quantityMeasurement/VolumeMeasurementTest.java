@@ -36,7 +36,7 @@ public class VolumeMeasurementTest {
     @Test
     void given1GallonAnd1FeetFromDiffType_ShouldReturnNotEqual() {
         Volume volume = new Volume(Volume.Unit.GALLON, 1.0);
-        Length length = new Length(Length.Unit.FEET, 1.0);
+        Length length = new Length(Unit.FEET, 1.0);
         Assertions.assertNotEquals(volume, length);
     }
 
